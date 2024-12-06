@@ -5,7 +5,7 @@ import imghdr
 import numpy as np
 from matplotlib import pyplot as plt
 
-# Check for GPU and set memory growth, if available
+
 gpus = tf.config.experimental.list_physical_devices('GPU')
 if gpus:
     try:
@@ -50,8 +50,8 @@ data_iterator = data.as_numpy_iterator()
 batch = data_iterator.next()
 
 # Inspecting batch
-print(f"Batch shape (images): {batch[0].shape}")  # Shape of image data
-print(f"Batch shape (labels): {batch[1].shape}")  # Shape of labels
+print(f"Batch shape (images): {batch[0].shape}")  
+print(f"Batch shape (labels): {batch[1].shape}")  
 
 # Example: Access a single image
 i = 0  # Index of the image
@@ -85,7 +85,7 @@ plt.show()
 dataset_length = len(data)
 
 # Split dataset sizes
-train_size = int(dataset_length * 0.7)
+train_size = int(dataset_length * 0.8 )
 val_size = int(dataset_length * 0.2)
 test_size = int(dataset_length * 0.1)
 
